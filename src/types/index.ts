@@ -1,4 +1,5 @@
-export interface ICardItem {
+
+export interface IProductItem {
   id: string;
   title: string;
   description: string;
@@ -8,32 +9,25 @@ export interface ICardItem {
 }
 
 export interface IProductsList {
-  products: ICardItem[];
-  preview: string | null;
+  products: IProductItem[];
 }
-  
-export interface IOrderForm {
+
+export interface IOrder {
+  items: string[]; 
   payment?: string;
   address?: string;
   phone?: string;
   email?: string;
-  total?: string | number;
 }
-  
-export interface IOrder extends IOrderForm {
-  items: string[];
-}
-  
-  export interface IOrderResult {
+
+export interface IOrderResult {
   id: string;
 }
 
 export interface IAppState {
-  catalog: ICardItem[];
-  preview: string;
-  basket: string[];
-  order: IOrder;
-  total: string | number;
-  loading: boolean;
+  catalog: IProductItem[];
+  preview: IProductItem | null; 
+  order_form: IOrder; 
+  basket: IProductItem[]; 
+  loading: boolean; 
 }
-
