@@ -13,7 +13,8 @@ export interface IProductsList {
 }
 
 export interface IOrder {
-  items: string[]; 
+  items?: string[]; 
+  totalPrice?: number;
   payment?: string;
   address?: string;
   phone?: string;
